@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: maven-rental-app
+    env: static
+    buildCommand: node build-embed.js
+    staticPublishPath: .

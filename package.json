@@ -6,6 +6,8 @@
     "react": "16.14.0"
   },
   "scripts": {
+    "start": "node server.js",
+    "build": "node build-embed.js",
     "postinstall": "wix sync-types",
     "dev": "wix dev",
     "lint": "eslint ."
