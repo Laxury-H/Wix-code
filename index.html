@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maven — Rent What You Need. Share What You Have. | Peer-to-Peer Rental Platform</title>
+  <meta name="description" content="Maven is a premium peer-to-peer rental marketplace. Don't buy what you only need a few times — save up to 95% on high-end cameras, camping gear, gala dresses, and tech gadgets with smart escrow protection.">
+  <meta name="keywords" content="peer-to-peer rental, rent gear, camera rental, camping equipment rental, designer dress rental, sharing economy, circular consumption, Maven">
+
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+  <!-- Ambient Luxury Glow Background -->
+  <div class="ambient-glow ambient-glow-1"></div>
+  <div class="ambient-glow ambient-glow-2"></div>
+  <div class="ambient-glow ambient-glow-3"></div>
+
+  <!-- ==========================================================================
+       Header & Brand Navigation
+       ========================================================================== -->
+  <header class="header" id="mainHeader">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo" id="brandLogoLink">
+        <div class="logo-symbol">M</div>
+        <div class="brand-info">
+          <span class="brand-name">Maven</span>
+          <span class="brand-tagline">Rent • Share • Trust</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#about" class="nav-link">What is Maven?</a></li>
+          <li><a href="#problem-solution" class="nav-link">Problem & Solution</a></li>
+          <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="#two-sided-value" class="nav-link">Two-Sided Value</a></li>
+          <li><a href="#trust-safety" class="nav-link">Trust & Safety</a></li>
+          <li><a href="#use-cases" class="nav-link">Real-life Use Cases</a></li>
+          <li><a href="#calculator" class="nav-link">Savings Calculator</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Role Toggle: Renter vs Lender -->
+        <div class="role-switch-wrapper" title="Switch viewpoint between Renter and Lender">
+          <button type="button" class="role-btn active" id="roleRenterBtn">Renters</button>
+          <button type="button" class="role-btn" id="roleLenderBtn">Lenders</button>
+        </div>
+
+        <button type="button" class="btn btn-primary btn-sm" data-open-modal="rent" id="headerCtaBtn">
+          Try Demo ✦
+        </button>
+
+        <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Section 1: Hero — What is Maven? (5-Second Grunt Test)
+       ========================================================================== -->
+  <section class="section hero-section" id="about">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-pill">
+          <span>✦</span> Next-Gen Peer-to-Peer Rental Platform
+        </div>
+
+        <h1 class="hero-title">
+          Don't buy what you <br>
+          <span class="text-gradient">only need a few times.</span>
+        </h1>
+
+        <div class="hero-subtitle">
+          “Rent what you need. Share what you have.”
+        </div>
+
+        <p class="hero-desc">
+          Instead of spending thousands on items you will only use for a few days, Maven connects you directly with verified lenders in your community. Enjoy top-tier cameras, outdoor gear, and designer apparel with escrow-protected deposits and digital condition handovers.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#use-cases" class="btn btn-primary btn-lg" id="heroExploreBtn">
+            Explore Maven ✦
+          </a>
+          <a href="#how-it-works" class="btn btn-secondary btn-lg" id="heroHowItWorksBtn">
+            See How It Works ▷
+          </a>
+        </div>
+
+        <div class="hero-metrics">
+          <div class="metric-item">
+            <span class="metric-val">92%</span>
+            <span class="metric-lbl">Average Cost Savings</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-val">100%</span>
+            <span class="metric-lbl">Escrow Protected Deposit</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-val">4.9 / 5</span>
+            <span class="metric-lbl">Community Trust Rating</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Card Showcase -->
+      <div class="hero-visual-card">
+        <div class="luxury-frame">
+          <div class="product-preview-img-box">
+            <img src="assets/hero_camera.jpg" alt="Fujifilm X100V in Dalat" class="product-preview-img" id="heroPreviewImg">
+            <div class="photo-badge-top">📷 3-Day Travel Getaway • Dalat</div>
+          </div>
+
+          <div class="product-info-bar">
+            <div class="product-header-row">
+              <span class="product-name">Fujifilm X100V Silver</span>
+              <span class="product-rating">⭐️ 4.9 (48 reviews)</span>
+            </div>
+
+            <!-- Comparison Strip -->
+            <div class="comparison-strip">
+              <div class="comp-box-old">
+                <div class="comp-tag">Retail Purchase</div>
+                <div class="comp-price-old">$850.00</div>
+                <div style="font-size:0.75rem; color:#8C475A; margin-top:2px;">Used 2-3 times/year ❌</div>
+              </div>
+              <div class="comp-box-new">
+                <div class="comp-tag">Rent on Maven</div>
+                <div class="comp-price-new">$8.00<span style="font-size:0.75rem; font-weight:normal;">/day</span></div>
+                <span class="comp-save-pill">Save 92% upfront ✓</span>
+              </div>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; color:#6C3346;">
+              <span>Lender: <strong>Tuan Minh</strong> (eKYC ID Verified)</span>
+              <a href="#how-it-works" style="color:var(--c-wine); font-weight:600; text-decoration:none;">View Story Flow ➔</a>
+            </div>
+          </div>
+
+          <!-- Floating Badges -->
+          <div class="floating-badge floating-badge-1">
+            <div class="badge-icon">🔒</div>
+            <div>
+              <div class="badge-text-primary">Escrow Deposit Protection</div>
+              <div class="badge-text-secondary">100% refunded upon safe return</div>
+            </div>
+          </div>
+
+          <div class="floating-badge floating-badge-2">
+            <div class="badge-icon">✓</div>
+            <div>
+              <div class="badge-text-primary">Digital Handover Evidence</div>
+              <div class="badge-text-secondary">Time-stamped condition check</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Section 2: The Problem — What Problem Does Maven Solve? (30-Sec Test)
+       ========================================================================== -->
+  <section class="section section-alt" id="problem-solution">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Real-World Dilemma</span>
+        <h2 class="section-title">
+          Do you really need to own something <br>
+          <span class="text-wine">you only use for a few days?</span>
+        </h2>
+        <p class="section-desc">
+          Modern consumer habits trap us in an inefficient cycle: buyers sink huge capital into idle goods, owners watch valuable assets gather dust, and informal peer rentals lack trust.
+        </p>
+      </div>
+
+      <div class="problem-grid">
+        <!-- Card 1: Renter Pain point -->
+        <div class="problem-card">
+          <div class="problem-card-icon">🛍️</div>
+          <span class="problem-target">For Renters — High Entry Barriers</span>
+          <h3 class="problem-title">Prohibitive costs for short-term experiences</h3>
+          <p class="problem-desc">
+            A high-end camera needed only for a 3-day vacation. A luxury glamping tent pitched once a year. A designer gown worn for a single gala evening. Buying outright drains your savings and clutters your home.
+          </p>
+          <div class="problem-quote-box">
+            “Why pay 100% of the purchase price for an item you will use less than 2% of the year?”
+          </div>
+        </div>
+
+        <!-- Card 2: Lender Pain point -->
+        <div class="problem-card">
+          <div class="problem-card-icon">📦</div>
+          <span class="problem-target">For Lenders — Idle Depreciating Assets</span>
+          <h3 class="problem-title">Valuable gear left sitting idle in cabinets</h3>
+          <p class="problem-desc">
+            Countless people own thousands of dollars worth of photography equipment, outdoor kits, and gadgets that sit unused 90% of the time, steadily losing market value without generating any financial return.
+          </p>
+          <div class="problem-quote-box">
+            “Leaving expensive gear unused feels wasteful, but lending to strangers informally feels too risky.”
+          </div>
+        </div>
+
+        <!-- Card 3: Trust Gap -->
+        <div class="problem-card">
+          <div class="problem-card-icon">🤝</div>
+          <span class="problem-target">The Market Gap — The Trust Barrier</span>
+          <h3 class="problem-title">Fear of scams, deposit loss, and item damage</h3>
+          <p class="problem-desc">
+            Directly renting via Facebook groups or classifieds is plagued with anxiety: renters worry about lost deposits or broken gear; lenders dread stolen items, ghosting, or uncompensated damage without recourse.
+          </p>
+          <div class="problem-quote-box">
+            “The single biggest barrier to peer-to-peer sharing between strangers is the lack of institutional trust.”
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Section 3: The Solution — Maven: The Trusted Two-Sided Bridge
+       ========================================================================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">The Comprehensive Solution</span>
+        <h2 class="section-title">
+          Maven: The Trusted Bridge Between <br>
+          <span class="text-wine">Those Who Need</span> & <span class="text-wine">Those Who Have</span>
+        </h2>
+        <p class="section-desc">
+          Maven is not merely an online catalog. Maven creates a transparent, escrow-secured sharing ecosystem that safeguards both parties throughout the entire lifecycle of the rental.
+        </p>
+      </div>
+
+      <div class="solution-bridge-wrap">
+        <div class="bridge-diagram">
+          <!-- Left: Renter -->
+          <div class="actor-box">
+            <div class="actor-avatar">🎒</div>
+            <div class="actor-role">RENTER</div>
+            <div class="actor-need">Needs the Item</div>
+            <ul class="actor-bullet-list">
+              <li>Access top-tier premium products</li>
+              <li>Pay only for actual days used</li>
+              <li>Save 80% to 95% vs buying retail</li>
+              <li>Deposit protected in third-party escrow</li>
+            </ul>
+          </div>
+
+          <!-- Center: Maven Core Platform -->
+          <div class="bridge-center-core">
+            <div class="core-brand-badge">MAVEN</div>
+            <div class="core-subtitle">Trusted Mediation & Security Layer</div>
+            <div class="bridge-features-flow">
+              <div class="bridge-step-chip">
+                <span>🪪</span> 1. eKYC Verified Identity & Profiles
+              </div>
+              <div class="bridge-step-chip">
+                <span>⭐️</span> 2. Two-Way Mutual Reputation Rating
+              </div>
+              <div class="bridge-step-chip">
+                <span>🔒</span> 3. Smart Deposit Escrow Protection
+              </div>
+              <div class="bridge-step-chip">
+                <span>📸</span> 4. Digital Handover Evidence & Inspection
+              </div>
+              <div class="bridge-step-chip">
+                <span>⚡️</span> 5. Instant Deposit Release & Payout
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Lender -->
+          <div class="actor-box">
+            <div class="actor-avatar">📸</div>
+            <div class="actor-role">LENDER</div>
+            <div class="actor-need">Owns the Item</div>
+            <ul class="actor-bullet-list">
+              <li>Monetize dormant household assets</li>
+              <li>Build reliable passive income streams</li>
+              <li>Screen and approve verified renters</li>
+              <li>Full asset safety with escrow deposits</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="solution-outcome-banner">
+          ✦ Peer-to-peer sharing economy: Creating mutual value while driving sustainable, circular consumption ✦
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Section 4: How Maven Works — Interactive Story Walkthrough (Mai's Trip)
+       ========================================================================== -->
+  <section class="section section-alt" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Interactive Walkthrough</span>
+        <h2 class="section-title">
+          How Maven Works: <br>
+          <span class="text-wine">The Story of Mai & Her Dalat Getaway</span>
+        </h2>
+        <p class="section-desc">
+          Follow the 6-step real-world journey of Mai: from needing a high-end camera for a 3-day trip to returning the gear and receiving her full deposit back instantly.
+        </p>
+      </div>
+
+      <div class="story-wrapper">
+        <!-- Story Header Bar with character info & playback controls -->
+        <div class="story-header-bar">
+          <div class="story-character-card">
+            <img src="assets/mai_avatar.jpg" alt="Mai - Maven Renter" class="story-char-avatar">
+            <div class="story-char-meta">
+              <h4>Character: Mai (24 years old)</h4>
+              <p>Planning a 3-day trip to Dalat • Needs a Fujifilm X100V camera</p>
+            </div>
+          </div>
+
+          <div class="story-playback-controls">
+            <button type="button" class="btn-play-pause" id="storyPlayPauseBtn" title="Play / Pause Auto-Advance">
+              ❚❚
+            </button>
+            <div class="story-timer-bar">
+              <div class="story-timer-progress" id="storyTimerProgress"></div>
+            </div>
+            <span style="font-size:0.8rem; color:#8E2847; font-weight:600;">Story Auto-Play</span>
+          </div>
+        </div>
+
+        <!-- Story Interactive Grid: Steps on Left, Simulated Phone Screen on Right -->
+        <div class="story-main-grid">
+          <div class="story-stepper-list">
+            <div class="story-step-item active" data-step="0">
+              <div class="step-num-pill">1</div>
+              <div class="step-content-box">
+                <h5>Step 1 — Discover the Item You Need (Discovery)</h5>
+                <p>Mai finds a Fujifilm X100V nearby for $8/day instead of spending $850 retail for a single trip.</p>
+              </div>
+            </div>
+
+            <div class="story-step-item" data-step="1">
+              <div class="step-num-pill">2</div>
+              <div class="step-content-box">
+                <h5>Step 2 — Inspect Details & Reserve (Booking)</h5>
+                <p>Reviews lender Tuan's verified 5-star profile and transparent pricing: $24 rental fee + refundable deposit.</p>
+              </div>
+            </div>
+
+            <div class="story-step-item" data-step="2">
+              <div class="step-num-pill">3</div>
+              <div class="step-content-box">
+                <h5>Step 3 — Lender Approval & Digital Handover (Handover)</h5>
+                <p>The lender approves; both take time-stamped condition photos and inspect serial numbers directly in app.</p>
+              </div>
+            </div>
+
+            <div class="story-step-item" data-step="3">
+              <div class="step-num-pill">4</div>
+              <div class="step-content-box">
+                <h5>Step 4 — Enjoy the Experience to the Fullest (Experience)</h5>
+                <p>Mai captures breathtaking photos in misty pine forests without buyer's remorse or ownership burden.</p>
+              </div>
+            </div>
+
+            <div class="story-step-item" data-step="4">
+              <div class="step-num-pill">5</div>
+              <div class="step-content-box">
+                <h5>Step 5 — Safe Return & Condition Verification (Return)</h5>
+                <p>Mai meets the lender on schedule; the lender inspects and confirms condition matches check-in photos.</p>
+              </div>
+            </div>
+
+            <div class="story-step-item" data-step="5">
+              <div class="step-num-pill">6</div>
+              <div class="step-content-box">
+                <h5>Step 6 — Instant Escrow Release & Review (Payout)</h5>
+                <p>Maven automatically releases 100% of the deposit to Mai, pays out rental earnings, and both leave 5-star ratings.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Simulated Phone Mockup Screen -->
+          <div class="phone-mockup-wrapper">
+            <div class="phone-screen">
+              <div class="phone-notch-bar">
+                <span>9:41</span>
+                <span id="phoneHeaderTitle" style="color:var(--c-wine); font-weight:bold;">Explore Nearby Gear</span>
+                <span>📶 100%</span>
+              </div>
+              <div class="phone-dynamic-body" id="phoneDynamicBody">
+                <!-- Injected via JavaScript -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Section 5: Two-Sided Value — Mutual Benefits (Renter & Lender)
+       ========================================================================== -->
+  <section class="section" id="two-sided-value">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Mutual Value Creation</span>
+        <h2 class="section-title">
+          Why Both Sides of the Marketplace <br>
+          <span class="text-wine">Rely on Maven</span>
+        </h2>
+        <p class="section-desc">
+          A circular sharing marketplace creates a win-win cycle: renters drastically cut expenses, while lenders turn idle possessions into recurring income.
+        </p>
+      </div>
+
+      <div class="value-tab-container">
+        <div class="value-tabs">
+          <button type="button" class="v-tab-btn active" id="tabValueRenter">For Renters</button>
+          <button type="button" class="v-tab-btn" id="tabValueLender">For Lenders</button>
+        </div>
+      </div>
+
+      <div class="value-cards-grid">
+        <!-- Renter Value Card -->
+        <div class="value-side-card" id="valueCardRenter">
+          <div class="value-card-header">
+            <div class="value-role-avatar">🎒</div>
+            <div>
+              <span style="font-size:0.8rem; font-weight:700; color:var(--c-wine); text-transform:uppercase;">Renter Benefits</span>
+              <h3>Renters — Frictionless Experiences</h3>
+            </div>
+          </div>
+
+          <ul class="value-points-list">
+            <li class="value-point-item">
+              <div class="point-icon-check">✓</div>
+              <div class="point-text">
+                <strong>Zero Upfront Purchase Burden</strong>
+                <span>Save 80% to 95% compared to purchasing gear retail for temporary occasions.</span>
+              </div>
+            </li>
+            <li class="value-point-item">
+              <div class="point-icon-check">✓</div>
+              <div class="point-text">
+                <strong>Access to Premium Flagship Gear</strong>
+                <span>Enjoy top-of-the-line mirrorless cameras, luxury glamping gear, and designer fashion without depreciation.</span>
+              </div>
+            </li>
+            <li class="value-point-item">
+              <div class="point-icon-check">✓</div>
+              <div class="point-text">
+                <strong>Pay Only for What You Use</strong>
+                <span>Flexible daily or weekend rentals. Return when finished with zero storage or maintenance hassle.</span>
+              </div>
+            </li>
+            <li class="value-point-item">
+              <div class="point-icon-check">✓</div>
+              <div class="point-text">
+                <strong>Guaranteed Escrow Safety</strong>
+                <span>Security deposits are locked safely in escrow and automatically released upon return.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Lender Value Card -->
+        <div class="value-side-card" id="valueCardLender">
+          <div class="value-card-header">
+            <div class="value-role-avatar">💎</div>
+            <div>
+              <span style="font-size:0.8rem; font-weight:700; color:var(--c-wine); text-transform:uppercase;">Lender Benefits</span>
+              <h3>Lenders — Idle Assets into Income</h3>
+            </div>
+          </div>
+
+          <ul class="value-points-list">
+            <li class="value-point-item">
+              <div class="point-icon-check">✓</div>
+              <div class="point-text">
+                <strong>Monetize Dormant Belongings</strong>
+                <span>Convert high-value items sitting in storage into predictable, recurring monthly income.</span>
+              </div>
+            </li>
+            <li class="value-point-item">
+              <div class="point-icon-check">✓</div>
+              <div class="point-text">
+                <strong>Optimize Asset Lifecycle</strong>
+                <span>Electronic equipment and camera sensors function better with regular exercise than long-term stagnation.</span>
+              </div>
+            </li>
+            <li class="value-point-item">
+              <div class="point-icon-check">✓</div>
+              <div class="point-text">
+                <strong>Complete Protection & Control</strong>
+                <span>Review renter profiles before accepting; mandatory escrow deposits cover 100% of equipment risk.</span>
+              </div>
+            </li>
+            <li class="value-point-item">
+              <div class="point-icon-check">✓</div>
+              <div class="point-text">
+                <strong>Champion Sustainable Living</strong>
+                <span>Contribute directly to the circular economy by reducing redundant consumer manufacturing waste.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="quote-banner-center">
+        <p>“One person's unused item can be another person's perfect solution.”</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Section 6: Trust & Safety — 4 Pillars of Security
+       ========================================================================== -->
+  <section class="section section-alt" id="trust-safety">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Security & Governance</span>
+        <h2 class="section-title">
+          How is Maven Different From <br>
+          <span class="text-wine">Facebook or Classifieds?</span>
+        </h2>
+        <p class="section-desc">
+          Informal rentals between strangers carry severe risks of stolen deposits, damaged goods, or ghosting. Maven replaces uncertainty with 4 proven institutional security pillars.
+        </p>
+      </div>
+
+      <div class="trust-compare-intro">
+        <div>
+          <strong>Informal Social Media Deals:</strong> Unverified identities, no escrow holding, prone to messy unresolvable disputes.
+        </div>
+        <div>
+          <strong style="color:#2E7D32;">Maven Marketplace:</strong> Backed by eKYC verification, escrow banking, and digital condition records.
+        </div>
+      </div>
+
+      <div class="trust-pillars-grid">
+        <!-- Pillar 1: Identity -->
+        <div class="pillar-card">
+          <div class="pillar-icon-circle">🪪</div>
+          <h3 class="pillar-title">eKYC Identity Verification</h3>
+          <p class="pillar-desc">
+            Every participant must complete government ID verification, phone number authentication, and matching bank account linking before transacting.
+          </p>
+        </div>
+
+        <!-- Pillar 2: Rating -->
+        <div class="pillar-card">
+          <div class="pillar-icon-circle">⭐️</div>
+          <h3 class="pillar-title">Two-Way Reputation Rating</h3>
+          <p class="pillar-desc">
+            Only verified completed rentals can leave reviews. Punctuality, care for gear, and communication history are publicly accountable.
+          </p>
+        </div>
+
+        <!-- Pillar 3: Deposit Escrow -->
+        <div class="pillar-card">
+          <div class="pillar-icon-circle">🔒</div>
+          <h3 class="pillar-title">Smart Deposit Escrow</h3>
+          <p class="pillar-desc">
+            Deposits are held safely in a neutral banking escrow. Neither party can arbitrarily withhold funds; release is automated upon mutual sign-off.
+          </p>
+        </div>
+
+        <!-- Pillar 4: Handover Evidence -->
+        <div class="pillar-card">
+          <div class="pillar-icon-circle">📸</div>
+          <h3 class="pillar-title">Digital Handover Evidence</h3>
+          <p class="pillar-desc">
+            Time-stamped photos, serial numbers, and functional check-in videos are logged directly on Maven as incontrovertible proof for any claims.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Section 7: Real-life Use Cases
+       ========================================================================== -->
+  <section class="section" id="use-cases">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Real-World Scenarios</span>
+        <h2 class="section-title">
+          When Should You Turn to <br>
+          <span class="text-wine">The Maven Platform?</span>
+        </h2>
+        <p class="section-desc">
+          Whenever you need specialized, high-quality equipment for temporary occasions, trips, or fleeting hobbies.
+        </p>
+      </div>
+
+      <div class="usecases-grid">
+        <!-- Use Case 1: Travel / Camera -->
+        <div class="usecase-card">
+          <div class="usecase-img-box">
+            <img src="assets/hero_camera.jpg" alt="Travel photography camera" class="usecase-img">
+            <span class="usecase-badge">📷 Travel & Photography</span>
+          </div>
+          <div class="usecase-body">
+            <h4 class="usecase-title">Need a camera for a 3-day vacation?</h4>
+            <div class="usecase-quote">“Rent instead of spending $850 for a single trip.”</div>
+            <p class="usecase-desc">
+              Heading to the mountains, coast, or abroad? Capture magazine-quality memories on a Fujifilm X100V or Sony Alpha instead of a standard smartphone.
+            </p>
+            <div class="usecase-pricing">
+              <span class="usecase-buy">Retail: $850.00</span>
+              <span class="usecase-rent">Rent: $8.00/day</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Use Case 2: Camping -->
+        <div class="usecase-card">
+          <div class="usecase-img-box">
+            <img src="assets/camping_gear.jpg" alt="Glamping and outdoor equipment" class="usecase-img">
+            <span class="usecase-badge">🏕️ Outdoor & Glamping</span>
+          </div>
+          <div class="usecase-body">
+            <h4 class="usecase-title">Only go camping twice a year?</h4>
+            <div class="usecase-quote">“Rent premium gear instead of cluttering your attic.”</div>
+            <p class="usecase-desc">
+              A luxury bell tent, foldout wooden tables, and camp stove sets give your family a dream weekend retreat without an upfront $450 equipment investment.
+            </p>
+            <div class="usecase-pricing">
+              <span class="usecase-buy">Retail: $450.00</span>
+              <span class="usecase-rent">Rent: $6.00/day</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Use Case 3: Fashion & Events -->
+        <div class="usecase-card">
+          <div class="usecase-img-box">
+            <img src="assets/fashion_dress.jpg" alt="Haute couture designer dress" class="usecase-img">
+            <span class="usecase-badge">👗 Gala & Formal Events</span>
+          </div>
+          <div class="usecase-body">
+            <h4 class="usecase-title">Need a stunning outfit for one special night?</h4>
+            <div class="usecase-quote">“Rent high fashion instead of buying an unworn dress.”</div>
+            <p class="usecase-desc">
+              A friend's wedding, award gala, or prom? Wear a couture gown that retails for hundreds of dollars for roughly the cost of a casual dinner.
+            </p>
+            <div class="usecase-pricing">
+              <span class="usecase-buy">Retail: $420.00</span>
+              <span class="usecase-rent">Rent: $10.00/day</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Use Case 4: Tech & Gadgets -->
+        <div class="usecase-card">
+          <div class="usecase-img-box">
+            <img src="assets/tech_vr.jpg" alt="VR headset and gaming gadget" class="usecase-img">
+            <span class="usecase-badge">🎮 Tech & Entertainment</span>
+          </div>
+          <div class="usecase-body">
+            <h4 class="usecase-title">Hosting a VR party or outdoor movie night?</h4>
+            <div class="usecase-quote">“Rent the latest tech strictly for the time you need.”</div>
+            <p class="usecase-desc">
+              Immerse friends in virtual reality or host a rooftop movie night with a wireless 4K projector without long-term commitment to rapidly depreciating tech.
+            </p>
+            <div class="usecase-pricing">
+              <span class="usecase-buy">Retail: $690.00</span>
+              <span class="usecase-rent">Rent: $8.00/day</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Section 8: Interactive Financial Calculator
+       ========================================================================== -->
+  <section class="section section-alt" id="calculator">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Financial Value Calculator</span>
+        <h2 class="section-title">
+          Calculate Your Financial Edge <br>
+          <span class="text-wine">With the Maven Platform</span>
+        </h2>
+        <p class="section-desc">
+          Estimate exactly how much money you can save by renting instead of buying retail, or discover how much passive income your unused gear can generate every month.
+        </p>
+      </div>
+
+      <div class="calc-wrapper">
+        <div class="calc-tabs">
+          <button type="button" class="calc-tab-btn active" id="calcTabRenter">I Want to Rent (Renter)</button>
+          <button type="button" class="calc-tab-btn" id="calcTabLender">I Want to Lend (Lender)</button>
+        </div>
+
+        <div class="calc-body-grid">
+          <div class="calc-controls">
+            <div class="calc-field-group">
+              <label for="calcItemSelect">Select Item Category:</label>
+              <select id="calcItemSelect" class="calc-select">
+                <!-- Injected via JavaScript -->
+              </select>
+            </div>
+
+            <div class="calc-field-group">
+              <label id="calcSliderLabel">Days you need to use this item:</label>
+              <div class="calc-range-wrapper">
+                <input type="range" id="calcDaysSlider" class="calc-range-slider" min="1" max="14" value="3">
+                <span class="calc-range-val" id="calcDaysValue">3 days</span>
+              </div>
+            </div>
+
+            <div style="background:var(--bg-subtle-rose); border-radius:12px; padding:14px; font-size:0.85rem; color:#6C3346;">
+              💡 <strong>Peace of Mind:</strong> Your security deposit is 100% refunded as soon as the item is returned in sound condition.
+            </div>
+          </div>
+
+          <!-- Result Display Card -->
+          <div class="calc-result-box">
+            <span class="calc-result-badge" id="calcResultBadge">Your Net Financial Savings</span>
+            <div class="calc-result-number" id="calcResultNumber">$826</div>
+            <div class="calc-result-sub" id="calcResultSub">
+              You save <strong>97%</strong> compared to retail purchase!
+            </div>
+
+            <div class="calc-result-details">
+              <div id="calcDetailLeft">
+                Retail purchase cost:<br>
+                <span style="text-decoration:line-through; font-weight:700;">$850.00</span>
+              </div>
+              <div id="calcDetailRight">
+                Rental cost on Maven:<br>
+                <strong style="color:var(--c-wine);">$24.00</strong>
+              </div>
+            </div>
+
+            <div style="margin-top:20px;">
+              <button type="button" class="btn btn-primary btn-sm" data-open-modal="rent" style="width:100%;">
+                Try Booking This Item ✦
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Section 9: Final CTA & FAQ
+       ========================================================================== -->
+  <section class="section">
+    <div class="container">
+      <!-- Final Concept Banner -->
+      <div class="final-cta-section">
+        <span class="final-cta-badge">✦ Join the Movement ✦</span>
+        <div class="final-cta-quote">
+          “You don't always need to own it. Sometimes, you just need to use it.”
+        </div>
+        <h2 class="final-cta-title">
+          Maven — Rent. Share. Make a difference.
+        </h2>
+        <p class="final-cta-desc">
+          Join a smart peer-to-peer sharing community. Liberate yourself from the costs of ownership and embrace a more flexible, sustainable lifestyle.
+        </p>
+
+        <div class="final-cta-buttons">
+          <button type="button" class="btn btn-white btn-lg" data-open-modal="rent" id="ctaWantToRent">
+            I Want to Rent Gear ✦
+          </button>
+          <button type="button" class="btn btn-outline-white btn-lg" data-open-modal="list" id="ctaWantToList">
+            I Want to Share My Items ✦
+          </button>
+        </div>
+      </div>
+
+      <!-- FAQ Accordion -->
+      <div class="faq-wrap">
+        <div class="section-header" style="margin-bottom:36px;">
+          <span class="section-badge">Common Questions</span>
+          <h3 style="font-size:1.8rem;">Frequently Asked Questions</h3>
+        </div>
+
+        <div class="faq-item active">
+          <button type="button" class="faq-question">
+            <span>How does Maven handle and refund security deposits?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            The renter's security deposit is held in a neutral, third-party escrow account maintained by Maven, never sent directly to the lender upfront. Once the item is safely returned and both parties sign off on the condition check in the app, 100% of the deposit is automatically refunded within seconds.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            <span>What happens if an item is damaged during the rental?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Before handover, both parties must photograph the item's condition and serial number, logging it into Maven's digital contract. If damage occurs, Maven's resolution team compares post-rental photos against check-in records to assess repair costs fairly from the escrow deposit.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            <span>Can I decline a rental request if I don't feel comfortable?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Absolutely. As a Lender, you maintain full autonomy to review the renter's eKYC verification status, past rental history, and reputation rating before choosing to accept or decline any booking request.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            <span>Where do renters and lenders meet for handovers?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Parties can agree on a convenient public meeting spot (such as a local coffee shop or residential lobby) or take advantage of integrated courier delivery options with mandatory hand-to-hand condition inspection.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Footer
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+            <div class="logo-symbol" style="width:36px; height:36px; font-size:1.1rem;">M</div>
+            <span style="font-family:var(--font-serif); font-size:1.4rem; font-weight:700; color:#FFFFFF;">Maven</span>
+          </div>
+          <p>
+            Next-generation peer-to-peer rental marketplace. Rent what you need, share what you have — empowering sustainable circular living.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>About Maven</h5>
+          <ul class="footer-links">
+            <li><a href="#about">What is Maven?</a></li>
+            <li><a href="#problem-solution">The Problem Solved</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#two-sided-value">Two-Sided Value</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Trust & Legal</h5>
+          <ul class="footer-links">
+            <li><a href="#trust-safety">eKYC Verification</a></li>
+            <li><a href="#trust-safety">Escrow Security</a></li>
+            <li><a href="#trust-safety">Digital Condition Checks</a></li>
+            <li><a href="#trust-safety">Dispute Resolution Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Interactive Demos</h5>
+          <ul class="footer-links">
+            <li><a href="#" data-open-modal="rent">Rent a Camera Demo</a></li>
+            <li><a href="#" data-open-modal="rent">Rent Glamping Gear Demo</a></li>
+            <li><a href="#" data-open-modal="list">List an Item Demo</a></li>
+            <li><a href="#calculator">Savings Calculator</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Maven Platform. Peer-to-Peer Rental Network. All rights reserved.</div>
+        <div>Styled in Blush Luxury & Rose Wine Palette (#FFE6EE • #F4C8D6 • #C45A7A • #8E2847 • #3E0F1F)</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       Interactive Modals (Simulations)
+       ========================================================================== -->
+  <!-- Modal 1: Rent Simulation (For Renters) -->
+  <div class="modal-overlay" id="rentModal">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h4>✦ Rent Gear Demo (Renter Flow)</h4>
+        <button type="button" class="modal-close-btn" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="rentSimulationForm">
+          <div class="form-group">
+            <label>Choose Item to Rent:</label>
+            <select class="form-input" id="modalItemSelect">
+              <option>Fujifilm X100V Silver ($8.00/day)</option>
+              <option>Glamping Bell Tent 4-Person Kit ($6.00/day)</option>
+              <option>Haute Couture Designer Gown ($10.00/day)</option>
+              <option>Meta Quest 3 VR Headset ($8.00/day)</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+            <div>
+              <label>Start Date:</label>
+              <input type="date" class="form-input" value="2026-10-18">
+            </div>
+            <div>
+              <label>Return Date:</label>
+              <input type="date" class="form-input" value="2026-10-21">
+            </div>
+          </div>
+
+          <div class="modal-price-breakdown">
+            <div class="breakdown-row">
+              <span>Rental Duration:</span>
+              <span><strong>3 Days</strong></span>
+            </div>
+            <div class="breakdown-row">
+              <span>Rental Fee ($8.00 x 3):</span>
+              <span>$24.00</span>
+            </div>
+            <div class="breakdown-row">
+              <span>Refundable Security Deposit:</span>
+              <span>$75.00</span>
+            </div>
+            <div class="breakdown-row total">
+              <span>Total Initial Authorization:</span>
+              <span>$99.00</span>
+            </div>
+          </div>
+
+          <div style="font-size:0.8rem; color:#6C3346; margin-bottom:18px;">
+            🔒 The $75.00 deposit is locked safely in Maven Escrow and automatically refunded upon successful return.
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%;">
+            Confirm & Send Booking Request ✦
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Listing Simulation (For Lenders) -->
+  <div class="modal-overlay" id="listModal">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h4>✦ List Your Item Demo (Lender Flow)</h4>
+        <button type="button" class="modal-close-btn" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="listSimulationForm">
+          <div class="form-group">
+            <label>Item Name / Description:</label>
+            <input type="text" class="form-input" placeholder="e.g. Sony A7IV Mirrorless Camera, Bell Tent Kit" value="Sony A7IV Mirrorless Camera 24-70mm GM" required>
+          </div>
+
+          <div class="form-group" style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+            <div>
+              <label>Daily Rental Rate ($):</label>
+              <input type="number" class="form-input" value="12" step="1">
+            </div>
+            <div>
+              <label>Required Security Deposit ($):</label>
+              <input type="number" class="form-input" value="150" step="10">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Condition & Included Accessories:</label>
+            <input type="text" class="form-input" value="Pristine condition (98%), includes 2 batteries, dual charger, 128GB SD card" required>
+          </div>
+
+          <div class="modal-price-breakdown">
+            <div class="breakdown-row">
+              <span>Estimated Monthly Earnings (6 days/mo):</span>
+              <span><strong>+$72.00 / month</strong></span>
+            </div>
+            <div class="breakdown-row">
+              <span>Estimated Annual Passive Income:</span>
+              <span style="color:#2E7D32; font-weight:700;">+$864.00 / year</span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%;">
+            Publish Listing on Maven ✦
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="scripts/app.js"></script>
+</body>
+</html>
