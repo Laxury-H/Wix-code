@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initRoleToggle();
   initFaqAccordion();
   initModals();
+  initWixBridge();
 });
 
 /* ==========================================================================
@@ -498,6 +499,13 @@ function initModals() {
   if (rentForm) {
     rentForm.addEventListener('submit', (e) => {
       e.preventDefault();
+      if (window.sendMavenToWix) {
+        window.sendMavenToWix('MAVEN_RENT_SUBMIT', {
+          action: 'rent',
+          item: 'Sony Alpha 7 IV / Gear',
+          timestamp: Date.now()
+        });
+      }
       alert('✦ Demo Simulation Successful!\n\nYour rental request has been forwarded to the verified lender. Maven is holding your deposit securely in escrow.');
       if (rentModal) rentModal.classList.remove('open');
     });
@@ -507,8 +515,62 @@ function initModals() {
   if (listForm) {
     listForm.addEventListener('submit', (e) => {
       e.preventDefault();
+      if (window.sendMavenToWix) {
+        window.sendMavenToWix('MAVEN_LIST_SUBMIT', {
+          action: 'list',
+          item: 'New Gear Listing',
+          timestamp: Date.now()
+        });
+      }
       alert('✦ Demo Listing Created!\n\nYour item has been published to Maven! You will receive instant notifications whenever a verified renter requests to book.');
       if (listModal) listModal.classList.remove('open');
     });
   }
+}
+
+/* ==========================================================================
+   7. Wix Bridge & Two-Way Communication (iFrame / Embed Support)
+   Allows the app to communicate seamlessly with Wix Velo ($w('#html1'))
+   ========================================================================== */
+function initWixBridge() {
+  function sendToWix(type, payload = {}) {
+    try {
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({
+          source: 'maven-app',
+          type: type,
+          ...payload
+        }, '*');
+      }
+    } catch (e) {
+      console.warn('Wix postMessage notice:', e);
+    }
+  }
+
+  // Notify Wix parent on ready
+  sendToWix('MAVEN_READY', {
+    timestamp: Date.now(),
+    title: document.title,
+    height: document.documentElement.scrollHeight
+  });
+
+  // Observe height changes (e.g. accordion or tab expansions)
+  if (window.ResizeObserver) {
+    const ro = new ResizeObserver(() => {
+      sendToWix('MAVEN_RESIZE', { height: document.documentElement.scrollHeight });
+    });
+    ro.observe(document.body);
+  }
+
+  // Listen for incoming messages from Wix Velo parent
+  window.addEventListener('message', (event) => {
+    if (!event.data) return;
+    const data = event.data;
+    if (data.type === 'WIX_PING') {
+      sendToWix('MAVEN_PONG', { status: 'online' });
+    }
+  });
+
+  // Attach to global window
+  window.sendMavenToWix = sendToWix;
 }

@@ -2175,7 +2175,7 @@ h1, h2, h3, h4, .serif-font {
       <div class="hero-visual-card">
         <div class="luxury-frame">
           <div class="product-preview-img-box">
-            <img src="https://raw.githubusercontent.com/Laxury-H/Wix-code/main/assets/hero_camera.jpg" alt="Fujifilm X100V in Dalat" class="product-preview-img" id="heroPreviewImg">
+            <img src="https://cdn.jsdelivr.net/gh/Laxury-H/Wix-code@main/assets/hero_camera.jpg" alt="Fujifilm X100V in Dalat" class="product-preview-img" id="heroPreviewImg">
             <div class="photo-badge-top">📷 3-Day Travel Getaway • Dalat</div>
           </div>
 
@@ -2380,7 +2380,7 @@ h1, h2, h3, h4, .serif-font {
         <!-- Story Header Bar with character info & playback controls -->
         <div class="story-header-bar">
           <div class="story-character-card">
-            <img src="https://raw.githubusercontent.com/Laxury-H/Wix-code/main/assets/mai_avatar.jpg" alt="Mai - Maven Renter" class="story-char-avatar">
+            <img src="https://cdn.jsdelivr.net/gh/Laxury-H/Wix-code@main/assets/mai_avatar.jpg" alt="Mai - Maven Renter" class="story-char-avatar">
             <div class="story-char-meta">
               <h4>Character: Mai (24 years old)</h4>
               <p>Planning a 3-day trip to Dalat • Needs a Fujifilm X100V camera</p>
@@ -2668,7 +2668,7 @@ h1, h2, h3, h4, .serif-font {
         <!-- Use Case 1: Travel / Camera -->
         <div class="usecase-card">
           <div class="usecase-img-box">
-            <img src="https://raw.githubusercontent.com/Laxury-H/Wix-code/main/assets/hero_camera.jpg" alt="Travel photography camera" class="usecase-img">
+            <img src="https://cdn.jsdelivr.net/gh/Laxury-H/Wix-code@main/assets/hero_camera.jpg" alt="Travel photography camera" class="usecase-img">
             <span class="usecase-badge">📷 Travel & Photography</span>
           </div>
           <div class="usecase-body">
@@ -2687,7 +2687,7 @@ h1, h2, h3, h4, .serif-font {
         <!-- Use Case 2: Camping -->
         <div class="usecase-card">
           <div class="usecase-img-box">
-            <img src="https://raw.githubusercontent.com/Laxury-H/Wix-code/main/assets/camping_gear.jpg" alt="Glamping and outdoor equipment" class="usecase-img">
+            <img src="https://cdn.jsdelivr.net/gh/Laxury-H/Wix-code@main/assets/camping_gear.jpg" alt="Glamping and outdoor equipment" class="usecase-img">
             <span class="usecase-badge">🏕️ Outdoor & Glamping</span>
           </div>
           <div class="usecase-body">
@@ -2706,7 +2706,7 @@ h1, h2, h3, h4, .serif-font {
         <!-- Use Case 3: Fashion & Events -->
         <div class="usecase-card">
           <div class="usecase-img-box">
-            <img src="https://raw.githubusercontent.com/Laxury-H/Wix-code/main/assets/fashion_dress.jpg" alt="Haute couture designer dress" class="usecase-img">
+            <img src="https://cdn.jsdelivr.net/gh/Laxury-H/Wix-code@main/assets/fashion_dress.jpg" alt="Haute couture designer dress" class="usecase-img">
             <span class="usecase-badge">👗 Gala & Formal Events</span>
           </div>
           <div class="usecase-body">
@@ -2725,7 +2725,7 @@ h1, h2, h3, h4, .serif-font {
         <!-- Use Case 4: Tech & Gadgets -->
         <div class="usecase-card">
           <div class="usecase-img-box">
-            <img src="https://raw.githubusercontent.com/Laxury-H/Wix-code/main/assets/tech_vr.jpg" alt="VR headset and gaming gadget" class="usecase-img">
+            <img src="https://cdn.jsdelivr.net/gh/Laxury-H/Wix-code@main/assets/tech_vr.jpg" alt="VR headset and gaming gadget" class="usecase-img">
             <span class="usecase-badge">🎮 Tech & Entertainment</span>
           </div>
           <div class="usecase-body">
@@ -3077,6 +3077,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initRoleToggle();
   initFaqAccordion();
   initModals();
+  initWixBridge();
 });
 
 /* ==========================================================================
@@ -3189,7 +3190,7 @@ const storyStepsData = [
       <div class="mockup-step-content">
         <span class="mockup-badge">Step 4 • Pure Enjoyment</span>
         <div style="border-radius:14px; overflow:hidden; height:170px; margin-bottom:12px; border:1px solid #F4C8D6;">
-          <img src="https://raw.githubusercontent.com/Laxury-H/Wix-code/main/assets/hero_camera.jpg" style="width:100%; height:100%; object-fit:cover;" alt="Dalat photography trip">
+          <img src="https://cdn.jsdelivr.net/gh/Laxury-H/Wix-code@main/assets/hero_camera.jpg" style="width:100%; height:100%; object-fit:cover;" alt="Dalat photography trip">
         </div>
         <div style="font-size:0.82rem; color:#6C3346; text-align:center; font-style:italic;">
           “Only need it for a weekend? Enjoy the best gear without the burden of ownership!”
@@ -3565,6 +3566,13 @@ function initModals() {
   if (rentForm) {
     rentForm.addEventListener('submit', (e) => {
       e.preventDefault();
+      if (window.sendMavenToWix) {
+        window.sendMavenToWix('MAVEN_RENT_SUBMIT', {
+          action: 'rent',
+          item: 'Sony Alpha 7 IV / Gear',
+          timestamp: Date.now()
+        });
+      }
       alert('✦ Demo Simulation Successful!\n\nYour rental request has been forwarded to the verified lender. Maven is holding your deposit securely in escrow.');
       if (rentModal) rentModal.classList.remove('open');
     });
@@ -3574,10 +3582,64 @@ function initModals() {
   if (listForm) {
     listForm.addEventListener('submit', (e) => {
       e.preventDefault();
+      if (window.sendMavenToWix) {
+        window.sendMavenToWix('MAVEN_LIST_SUBMIT', {
+          action: 'list',
+          item: 'New Gear Listing',
+          timestamp: Date.now()
+        });
+      }
       alert('✦ Demo Listing Created!\n\nYour item has been published to Maven! You will receive instant notifications whenever a verified renter requests to book.');
       if (listModal) listModal.classList.remove('open');
     });
   }
+}
+
+/* ==========================================================================
+   7. Wix Bridge & Two-Way Communication (iFrame / Embed Support)
+   Allows the app to communicate seamlessly with Wix Velo ($w('#html1'))
+   ========================================================================== */
+function initWixBridge() {
+  function sendToWix(type, payload = {}) {
+    try {
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({
+          source: 'maven-app',
+          type: type,
+          ...payload
+        }, '*');
+      }
+    } catch (e) {
+      console.warn('Wix postMessage notice:', e);
+    }
+  }
+
+  // Notify Wix parent on ready
+  sendToWix('MAVEN_READY', {
+    timestamp: Date.now(),
+    title: document.title,
+    height: document.documentElement.scrollHeight
+  });
+
+  // Observe height changes (e.g. accordion or tab expansions)
+  if (window.ResizeObserver) {
+    const ro = new ResizeObserver(() => {
+      sendToWix('MAVEN_RESIZE', { height: document.documentElement.scrollHeight });
+    });
+    ro.observe(document.body);
+  }
+
+  // Listen for incoming messages from Wix Velo parent
+  window.addEventListener('message', (event) => {
+    if (!event.data) return;
+    const data = event.data;
+    if (data.type === 'WIX_PING') {
+      sendToWix('MAVEN_PONG', { status: 'online' });
+    }
+  });
+
+  // Attach to global window
+  window.sendMavenToWix = sendToWix;
 }
 
 </script>
